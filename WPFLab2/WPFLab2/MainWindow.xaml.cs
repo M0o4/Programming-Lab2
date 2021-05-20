@@ -12,8 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyLibrary;
 
-namespace WPFLab2
+namespace WpfLab2
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
