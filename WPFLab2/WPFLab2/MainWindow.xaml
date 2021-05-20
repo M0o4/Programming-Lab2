@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLab2"
         mc:Ignorable="d"
-        Height="600" Width="1024">
-    <Grid>
-       
-    </Grid>
+        Height="600" Width="920"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border Background="#00685A" CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Indrey Lab2"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="#FFCD73"
+                       FontSize="22"
+                       Margin="20,0,0,0"/>
+        </Grid>
+    </Border>
 </Window>
