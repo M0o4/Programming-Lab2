@@ -30,10 +30,11 @@
                        FontSize="22"
                        Margin="20,0,0,0"/>
 
+            <!--MenuButton-->
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Home"
                              Height="50"
-                             Foreground="#FFBB40"
+                             Foreground="#FFBB40" 
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
                 <RadioButton Content="Discovery"
@@ -47,6 +48,16 @@
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
             </StackPanel>
+
+            <!--SearchBox-->
+            <TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource MordenTextbox}"/>
+
         </Grid>
     </Border>
 </Window>
