@@ -34,7 +34,9 @@
                        HorizontalAlignment="Left"
                        Foreground="#FFFFFF"
                        FontSize="22"
-                       Margin="20,0,0,0"/>
+                       Margin="20,0,0,0"
+                       FontFamily="/Fonts/#Roboto"
+                       FontWeight="Bold"/>
 
             <!--MenuButton-->
             <StackPanel Grid.Row="1">
@@ -42,12 +44,15 @@
                              Height="50"
                              Foreground="#818188" 
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
                 <RadioButton Content="Discovery"
                              Height="50"
                              Foreground="#818188"
                              FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding DiscoveryViewCommand}"/>
                 <RadioButton Content="Feture"
                              Height="50"
                              Foreground="#818188"

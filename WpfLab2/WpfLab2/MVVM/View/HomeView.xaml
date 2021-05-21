@@ -7,6 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="460" d:DesignWidth="800">
     <StackPanel>
+        <StackPanel.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontFamily"
+                                        Value="/Fonts/#Roboto"/>
+            </Style>
+        </StackPanel.Resources>
         <TextBlock Text="Discover"
                    Foreground="White"
                    FontSize="28"
