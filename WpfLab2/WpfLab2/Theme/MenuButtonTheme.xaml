@@ -27,6 +27,17 @@
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="#393C43"/>
             </Trigger>
+            
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="False"/>
+                    <Condition Property="IsMouseOver" Value="True"/>
+                </MultiTrigger.Conditions>
+
+                <MultiTrigger.Setters>
+                    <Setter Property="Background" Value="#34373C"/>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
         </Style.Triggers>
     </Style>
 </ResourceDictionary>

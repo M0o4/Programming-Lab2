@@ -15,7 +15,7 @@ namespace WpfLab2.MVVM.ViewModel
 
 		public object CurrentView
 		{
-			get { return _currentView; }
+			get => _currentView;
 			set 
 			{ 
 				_currentView = value;

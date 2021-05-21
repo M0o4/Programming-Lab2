@@ -13,18 +13,6 @@
         Background="Transparent"
         AllowsTransparency="True">
 
-    <Window.Resources>
-        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <ContentPresenter/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-    
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
@@ -45,6 +33,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
+            <!--Close Button-->
             <WrapPanel Grid.Column="1"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Right">
@@ -78,7 +67,7 @@
                        FontFamily="/Fonts/#Roboto"
                        FontWeight="Bold"/>
 
-            <!--MenuButton-->
+            <!--Menu Button-->
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Home"
                              Height="50"
@@ -100,14 +89,14 @@
                              Style="{StaticResource MenuButtonTheme}"/>
             </StackPanel>
 
-            <!--SearchBox-->
+            <!--Search Box-->
             <TextBox Width="250"
                      Height="40"
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
                      Margin="5"
                      Grid.Column="1"
-                     Style="{StaticResource MordenTextbox}"/>
+                     Style="{StaticResource ModernTextBox}"/>
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
