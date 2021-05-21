@@ -6,7 +6,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border CornerRadius="10"
-                            Background="#00A08A"
+                            Background="#202225"
                             Width="200" Height="40">
                         <Grid>
                             <Rectangle StrokeThickness="1"/>
@@ -16,7 +16,7 @@
                                      Background="Transparent"
                                      VerticalContentAlignment="Center"
                                      Padding="5"
-                                     Foreground="#FFBB40"
+                                     Foreground="#E4E1D9"
                                      x:Name="SearchBox"/>
 
                             <TextBlock IsHitTestVisible="False"
@@ -25,7 +25,7 @@
                                        HorizontalAlignment="Left"
                                        Margin="10,0,0,0"
                                        FontSize="11"
-                                       Foreground="#FFBB40"
+                                       Foreground="#65656D"
                                        Grid.Column="1">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">

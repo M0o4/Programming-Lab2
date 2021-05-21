@@ -11,7 +11,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True">
-    <Border Background="#1E786C" CornerRadius="20">
+    <Border Background="#2F3136" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
@@ -26,7 +26,7 @@
             <TextBlock Text="Indrey Lab2"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
-                       Foreground="#FFCD73"
+                       Foreground="#FFFFFF"
                        FontSize="22"
                        Margin="20,0,0,0"/>
 
@@ -34,17 +34,17 @@
             <StackPanel Grid.Row="1">
                 <RadioButton Content="Home"
                              Height="50"
-                             Foreground="#FFBB40" 
+                             Foreground="#818188" 
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
                 <RadioButton Content="Discovery"
                              Height="50"
-                             Foreground="#FFBB40"
+                             Foreground="#818188"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
                 <RadioButton Content="Feture"
                              Height="50"
-                             Foreground="#FFBB40"
+                             Foreground="#818188"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"/>
             </StackPanel>
@@ -57,6 +57,10 @@
                      Margin="5"
                      Grid.Column="1"
                      Style="{StaticResource MordenTextbox}"/>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"/>
 
         </Grid>
     </Border>
