@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfLab2.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="460" d:DesignWidth="800">
     <StackPanel>
         <TextBlock Text="Discover"
                    Foreground="White"
@@ -13,7 +13,8 @@
                    HorizontalAlignment="Left"
                    Margin="0,0,0,20"/>
 
-        <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal"
+                    Margin="0,0,0,10">
             <Border Width="400" Height="200">
 
                 <Border.Background>
@@ -31,22 +32,22 @@
 
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="World leader&#x0a;in global finance"
+                        <TextBlock Text="Top site&#x0a;to watch anime online"
                                    Foreground="#FFFFFF"
                                    FontSize="28"
                                    Margin="20,10,10,0"/>
-                        <TextBlock Text="Get started today!"
+                        <TextBlock Text="Get started watching today!"
                                    Foreground="#FFFFFF"
                                    FontSize="18"
                                    Margin="20,10,10,0"/>
                     </StackPanel>
 
-                    <Image Width="190" Height="189"
+                    <Image Width="156" Height="156"
                            Source="/Images/Image1.png"
                            HorizontalAlignment="Right"
                            VerticalAlignment="Bottom"
                            RenderTransformOrigin="0.5,0.5"
-                           Margin="0,0,-30,-37">
+                           Margin="0,0,-19,-28">
                         <Image.RenderTransform>
                             <TransformGroup>
                                 <ScaleTransform/>
@@ -91,21 +92,21 @@
                         Background="#FFCC40"
                         CornerRadius="10"
                         Margin="0"/>
-                
+
                 <Border Width="150" Height="150"
                         Background="#408DD2"
                         CornerRadius="10"/>
-                
+
                 <Border Width="150" Height="150"
                         Background="#FF8740"
                         CornerRadius="10"/>
-                
+
                 <Border Width="150" Height="150"
                         Background="#4C57D8"
                         CornerRadius="10"/>
             </StackPanel>
-            
+
         </StackPanel>
-        
+
     </StackPanel>
 </UserControl>
