@@ -13,9 +13,25 @@
         Background="Transparent"
         AllowsTransparency="True">
 
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="15"/>
+    </WindowChrome.WindowChrome>
     
     <Border Background="#2F3136" CornerRadius="20">
         <Grid>
@@ -28,6 +44,30 @@
                 <RowDefinition Height="75"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+
+            <WrapPanel Grid.Column="1"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Right">
+               
+                <Button Style="{StaticResource ImageButtonStyle}"
+                        Width="20" Height="20"
+                        Margin="0,15,10,0">
+                    <Image Source="/Images/greenbutton.png"/>
+                </Button>
+                
+                <Button Style="{StaticResource ImageButtonStyle}"
+                        Width="20" Height="20"
+                        Margin="0,15,10,0">
+                    <Image Source="/Images/yellowbutton.png"/>
+                </Button>
+                
+                <Button Style="{StaticResource ImageButtonStyle}"
+                        Click="ImageButton_Click"
+                        Width="20" Height="20"
+                        Margin="0,15,10,0">
+                    <Image Source="/Images/closebutton.png"/>
+                </Button>
+            </WrapPanel>
 
             <TextBlock Text="Indrey Lab2"
                        VerticalAlignment="Center"

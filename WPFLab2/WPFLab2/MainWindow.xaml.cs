@@ -25,5 +25,10 @@ namespace WpfLab2
 		{
 			InitializeComponent();
 		}
+
+		private void ImageButton_Click(object sender, RoutedEventArgs e)
+		{
+			this.Close();
+		}
 	}
 }
