@@ -29,8 +29,7 @@
                                        HorizontalAlignment="Left"
                                        Margin="10,0,0,0"
                                        FontSize="11"
-                                       Foreground="#65656D"
-                                       Grid.Column="1">
+                                       Foreground="#65656D">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
