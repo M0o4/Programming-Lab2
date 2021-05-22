@@ -11,17 +11,17 @@ namespace WpfLab2.MVVM.ViewModel
 		public HomeViewModel HomeVM { get; set; }
 		public DiscoveryViewModel DiscoveryVM { get; set; }
 
-		private object _currentView;
-
-		public object CurrentView
-		{
-			get => _currentView;
-			set 
-			{ 
-				_currentView = value;
-				OnPropertyChanged();
-			}
-		}
+		//private object _currentView;
+		public object CurrentView { get; set; }
+		//public object CurrentView
+		//{
+		//	get => _currentView;
+		//	set 
+		//	{ 
+		//		_currentView = value;
+		//		//OnPropertyChanged();
+		//	}
+		//}
 
 
 		public MainViewModel()
