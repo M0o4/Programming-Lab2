@@ -2,25 +2,30 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WpfLab2"
-             xmlns:viewModel="clr-namespace:WpfLab2.MVVM.ViewModel"
+             xmlns:viewModel="clr-namespace:WpfLab2.MVVM.ViewModels"
              xmlns:view="clr-namespace:WpfLab2.MVVM.View"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
-                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
-                <ResourceDictionary Source="Theme/ImageButtonTheme.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-
-            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-                <view:HomeView/>
-            </DataTemplate>
-            
-            <DataTemplate DataType="{x:Type viewModel:DiscoveryViewModel}">
-                <view:DiscoveryView/>
+            <DataTemplate DataType="{x:Type viewModel:AddTestViewModel}">
+                <view:AddTestView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:ListOfTestsViewModel}">
+                <view:ListOfTestsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AddExamViewModel}">
+                <view:AddExamView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AddFinalExamViewModel}">
+                <view:AddFinalExamView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AddChallengeViewModel}">
+                <view:AddChallengeView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

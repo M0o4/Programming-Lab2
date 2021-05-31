@@ -1,0 +1,99 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace MyLibrary
+{
+    [Serializable]
+    public class TestQuestion : Question
+    {
+        public List<string> Answers => _answers;
+
+        #region Private Variables
+
+        private readonly List<string> _answers;
+
+        private readonly Random _rng = new Random();
+
+		#endregion
+
+		#region Methods
+
+		public TestQuestion()
+		{
+
+		}
+
+        public TestQuestion(string text, string answer, List<string> answers)
+        {
+            Text = text;
+            _answers = answers;
+            AddAnswers(answer);
+        }
+
+        private void AddAnswers(string answer)
+        {
+            Answer = answer;
+            _answers.Add(answer);
+            Shuffle(_answers);
+        }
+
+        private void Shuffle(IList<string> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = _rng.Next(n + 1);
+                string value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
+        public void ShowAnswers()
+        {
+            for (int i = 0; i < _answers.Count; i++)
+            {
+                Console.WriteLine(i + 1 + ")" + _answers[i]);
+            }
+        }
+
+        public string GetAnswerInList(int id)
+        {
+            if (id > _answers.Count || id < 0) return null;
+
+            return _answers[id];
+        }
+
+        public override void AskQuestion(ref int score, bool answeResult)
+        {
+            var currConsoleColor = Console.ForegroundColor;
+            int id;
+
+            Console.WriteLine($"Вопрос: {Text}");
+
+            ShowAnswers();
+
+            do
+            {
+                Console.Write("Введите ответ: ");
+
+                var answer = Console.ReadLine();
+
+                if (!int.TryParse(answer, out id))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Ошибка ввода, попробуйте снова.\a");
+                    Console.ForegroundColor = currConsoleColor;
+                }
+            } while (id < 1);
+
+            WriteResult(string.Equals(Answer, GetAnswerInList(id - 1), StringComparison.CurrentCultureIgnoreCase), ref score);
+            
+            if(answeResult)
+                AddScore(ref score);
+        }
+
+        #endregion
+    }
+}

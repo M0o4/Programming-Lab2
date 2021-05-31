@@ -4,105 +4,76 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfLab2"
-        xmlns:viewModel="clr-namespace:WpfLab2.MVVM.ViewModel"
         mc:Ignorable="d"
-        Height="600" Width="920"
-        WindowStartupLocation="CenterScreen"
-        WindowStyle="None"
-        ResizeMode="NoResize"
-        Background="Transparent"
-        AllowsTransparency="True">
+        Title="MainWindow"
+        Height="500" Width="1024"
+        DataContext="{Binding ViewModel, 
+    RelativeSource={RelativeSource Self}}"
+        Loaded="Window_LoadedAsync">
 
-    <Window.DataContext>
-        <viewModel:MainViewModel/>
-    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical">
+            <Button Content="Добавить"
+                    Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Width="150"
+                    Height="30"
+                    Margin="10"
+                    Click="ShowAddButtons"/>
 
-    <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="15"/>
-    </WindowChrome.WindowChrome>
-    
-    <Border Background="#2F3136" CornerRadius="20">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <!--Close Button-->
-            <WrapPanel Grid.Column="1"
-                       VerticalAlignment="Top"
-                       HorizontalAlignment="Right">
-               
-                <Button Style="{StaticResource ImageButtonStyle}"
-                        Width="20" Height="20"
-                        Margin="0,15,10,0">
-                    <Image Source="/Images/greenbutton.png"/>
+            <StackPanel x:Name="AddButtons"
+                        Grid.Column="0"
+                        Visibility="Collapsed">
+                <Button Content="Тест"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        Width="150"
+                        Height="30"
+                        Margin="0,5,0,5"
+                        Command="{Binding AddTestCmd}">
                 </Button>
-                
-                <Button Style="{StaticResource ImageButtonStyle}"
-                        Width="20" Height="20"
-                        Margin="0,15,10,0">
-                    <Image Source="/Images/yellowbutton.png"/>
-                </Button>
-                
-                <Button Style="{StaticResource ImageButtonStyle}"
-                        Click="ImageButton_Click"
-                        Width="20" Height="20"
-                        Margin="0,15,10,0">
-                    <Image Source="/Images/closebutton.png"/>
-                </Button>
-            </WrapPanel>
 
-            <TextBlock Text="Indrey Lab2"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       Foreground="#FFFFFF"
-                       FontSize="22"
-                       Margin="20,0,0,0"
-                       FontFamily="/Fonts/#Roboto"
-                       FontWeight="Bold"/>
+                <Button Content="Экзамен"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        Width="150"
+                        Height="30"
+                        Margin="0,5,0,5"
+                        Command="{Binding AddExamCmd}"/>
 
-            <!--Menu Button-->
-            <StackPanel Grid.Row="1">
-                <RadioButton Content="Home"
-                             Height="50"
-                             Foreground="#818188" 
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             IsChecked="True"
-                             Command="{Binding HomeViewCommand}"/>
-                <RadioButton Content="Discovery"
-                             Height="50"
-                             Foreground="#818188"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Command="{Binding DiscoveryViewCommand}"/>
-                <RadioButton Content="Feture"
-                             Height="50"
-                             Foreground="#818188"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                <Button Content="Выпускной экзамен"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        Width="150"
+                        Height="30"
+                        Margin="0,5,0,5"
+                        Command="{Binding AddFinalExamCmd}"/>
+
+                <Button Content="Испытание"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        Width="150"
+                        Height="30"
+                        Margin="0,5,0,5"
+                        Command="{Binding AddChallengeCmd}"/>
             </StackPanel>
 
-            <!--Search Box-->
-            <TextBox Width="250"
-                     Height="40"
-                     VerticalContentAlignment="Center"
-                     HorizontalAlignment="Left"
-                     Margin="5"
-                     Grid.Column="1"
-                     Style="{StaticResource ModernTextBox}"/>
+            <Button Content="Список тестов"
+                    Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    Width="150"
+                    Height="30"
+                    Margin="0,5,0,5"
+                    Command="{Binding ListOfTestCmd}"/>
+        </StackPanel>
 
-            <ContentControl Grid.Row="1"
-                            Grid.Column="1"
-                            Margin="10"
-                            Content="{Binding CurrentView}"/>
-
-        </Grid>
-    </Border>
+        <ContentControl Grid.Column="1"
+                        Margin="10"
+                        Content="{Binding CurrentView}"/>
+    </Grid>
 </Window>

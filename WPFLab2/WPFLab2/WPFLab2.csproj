@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F011B54E-38AF-4463-9E82-63A58EB3B838}</ProjectGuid>
+    <ProjectGuid>{ABE2F5FA-E665-4374-BD71-7120F19789CB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WpfLab2</RootNamespace>
     <AssemblyName>WpfLab2</AssemblyName>
@@ -69,42 +69,57 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\ObservableObject.cs" />
-    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Cmds\AddTestCommand.cs" />
+    <Compile Include="Cmds\CommandBase.cs" />
+    <Compile Include="Cmds\RelayCommand.cs" />
+    <Compile Include="Cmds\RelayCommandT.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MVVM\View\DiscoveryView.xaml">
+    <Page Include="MVVM\View\AddChallengeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MVVM\View\HomeView.xaml">
+    <Page Include="MVVM\View\AddExamView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Theme\ImageButtonTheme.xaml">
+    <Page Include="MVVM\View\AddFinalExamView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Theme\MenuButtonTheme.xaml">
+    <Page Include="MVVM\View\AddTestView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Theme\TextboxTheme.xaml">
+    <Page Include="MVVM\View\ListOfTestsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MVVM\ViewModel\DiscoveryViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
-    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
-    <Compile Include="MVVM\View\DiscoveryView.xaml.cs">
-      <DependentUpon>DiscoveryView.xaml</DependentUpon>
+    <Compile Include="MVVM\Models\Invenory.cs" />
+    <Compile Include="MVVM\ViewModels\AddChallengeViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\AddExamViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\AddFinalExamViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\AddTestViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\ListOfTestsViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="MVVM\View\AddChallengeView.xaml.cs">
+      <DependentUpon>AddChallengeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\HomeView.xaml.cs">
-      <DependentUpon>HomeView.xaml</DependentUpon>
+    <Compile Include="MVVM\View\AddExamView.xaml.cs">
+      <DependentUpon>AddExamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AddFinalExamView.xaml.cs">
+      <DependentUpon>AddFinalExamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AddTestView.xaml.cs">
+      <DependentUpon>AddTestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ListOfTestsView.xaml.cs">
+      <DependentUpon>ListOfTestsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -123,14 +138,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Fonts\Roboto-Black.ttf" />
-    <Resource Include="Fonts\Roboto-BlackItalic.ttf" />
-    <Resource Include="Fonts\Roboto-Bold.ttf" />
-    <Resource Include="Fonts\Roboto-BoldItalic.ttf" />
-    <Resource Include="Fonts\Roboto-Italic.ttf" />
-    <Resource Include="Fonts\Roboto-Medium.ttf" />
-    <Resource Include="Fonts\Roboto-MediumItalic.ttf" />
-    <Resource Include="Fonts\Roboto-Regular.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -141,26 +148,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Programming\Programming-Lab1\lab1Framework\MyLibrary\MyLibrary.csproj">
+    <ProjectReference Include="..\MyLibrary\MyLibrary.csproj">
       <Project>{bcdf2e68-4424-4d5c-a91c-0c1cd47d95c9}</Project>
       <Name>MyLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MVVM\Model\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Image1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\yellowbutton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\greenbutton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\closebutton.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.4.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.4.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

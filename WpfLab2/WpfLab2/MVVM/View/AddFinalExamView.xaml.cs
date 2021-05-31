@@ -12,15 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfLab2.MVVM.ViewModels;
 
 namespace WpfLab2.MVVM.View
 {
 	/// <summary>
-	/// Interaction logic for HomeView.xaml
+	/// Interaction logic for AddFinalExamView.xaml
 	/// </summary>
-	public partial class HomeView : UserControl
+	public partial class AddFinalExamView : UserControl
 	{
-		public HomeView()
+		public AddFinalExamViewModel ViewModel { get; set; } = new AddFinalExamViewModel();
+		public AddFinalExamView()
 		{
 			InitializeComponent();
 		}

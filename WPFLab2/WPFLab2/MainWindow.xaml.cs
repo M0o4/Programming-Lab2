@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MyLibrary;
+using WpfLab2.MVVM.ViewModels;
 
 namespace WpfLab2
 {
@@ -21,14 +22,35 @@ namespace WpfLab2
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		public MainWindowViewModel ViewModel { get; set; } = new MainWindowViewModel();
+
 		public MainWindow()
 		{
 			InitializeComponent();
 		}
 
-		private void ImageButton_Click(object sender, RoutedEventArgs e)
+		private void ShowAddButtons(object sender, RoutedEventArgs e)
 		{
-			this.Close();
+			if(AddButtons.Visibility == Visibility.Collapsed)
+			{
+				AddButtons.Visibility = Visibility.Visible;
+			}
+			else
+			{
+				AddButtons.Visibility = Visibility.Collapsed;
+			}
+		}
+
+		private async void Window_LoadedAsync(object sender, RoutedEventArgs e)
+		{
+			MVVM.Models.Invenory.Tests = new ObservableCollection<MyLibrary.Test>(await LoadData());
+			//ListOfTestsViewModel.Tests = (ObservableCollection<MyLibrary.Test>)MVVM.Models.Invenory.Tests;
+		}
+
+		private async Task<List<MyLibrary.Test>> LoadData()
+		{
+			return await MVVM.Models.Invenory.
+					DeserializeElement<List<MyLibrary.Test>>(MVVM.Models.Invenory.DefaultPathToFile) ?? new List<MyLibrary.Test>();
 		}
 	}
 }
