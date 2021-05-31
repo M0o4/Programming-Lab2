@@ -42,6 +42,7 @@
       <HintPath>..\packages\PropertyChanged.Fody.3.3.3\lib\net40\PropertyChanged.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,11 +100,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\Models\EntityBase.cs" />
     <Compile Include="MVVM\Models\Invenory.cs" />
     <Compile Include="MVVM\ViewModels\AddChallengeViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AddExamViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AddFinalExamViewModel.cs" />
     <Compile Include="MVVM\ViewModels\AddTestViewModel.cs" />
+    <Compile Include="MVVM\ViewModels\AddTestViewModelPartial.cs" />
     <Compile Include="MVVM\ViewModels\ListOfTestsViewModel.cs" />
     <Compile Include="MVVM\ViewModels\MainWindowViewModel.cs" />
     <Compile Include="MVVM\View\AddChallengeView.xaml.cs">

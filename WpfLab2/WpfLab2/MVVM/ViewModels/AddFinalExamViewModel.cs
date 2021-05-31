@@ -41,7 +41,7 @@ namespace WpfLab2.MVVM.ViewModels
 			FinalExam exam = new FinalExam();
 			exam.TestName = Name;
 			exam.TimeLimit = int.Parse(TimeLimit);
-			exam.ListOfExaminers = new List<string>(Invenory.SplitWrongAnswers(Examiners));
+			exam.ListOfExaminers = new List<string>(Invenory.SpliWithComma(Examiners));
 
 			if (string.IsNullOrEmpty(WrongAnswers))
 			{
@@ -49,7 +49,7 @@ namespace WpfLab2.MVVM.ViewModels
 			}
 			else
 			{
-				exam.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SplitWrongAnswers(WrongAnswers))));
+				exam.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SpliWithComma(WrongAnswers))));
 			}
 
 			MessageBox.Show($"Added test {exam.TestName}!");

@@ -17,9 +17,9 @@ namespace WpfLab2.MVVM.Models
 		public event PropertyChangedEventHandler PropertyChanged;
         public static string DefaultPathToFile { get; } = "Data\\Elements.xml";
 
-        public static IList<Test> Tests { get; set; } /*= new ObservableCollection<Test>();*/
+        public static IList<Test> Tests { get; set; } 
 
-		public static string[] SplitWrongAnswers(string wrongAnswers) => wrongAnswers.Split(',');
+		public static string[] SpliWithComma(string str) => str.Split(',');
 
         public static async Task<bool> SerializeElement<T>(string filename,
            T listOfElements)

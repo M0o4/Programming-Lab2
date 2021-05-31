@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,7 +14,7 @@ using WpfLab2.MVVM.Models;
 
 namespace WpfLab2.MVVM.ViewModels
 {
-	public class AddTestViewModel : INotifyPropertyChanged
+	public partial class AddTestViewModel : INotifyPropertyChanged
 	{
 		public string Name { get; set; }
 		public string Text { get; set; }
@@ -33,17 +35,20 @@ namespace WpfLab2.MVVM.ViewModels
 			Tests = Invenory.Tests;
 		}
 
-		private bool CanAddTest() => Tests != null;
+		private bool CanAddTest() => Tests != null && !_hasError;
 
 		private void AddTest()
 		{
 			Test test = new Test();
 			test.TestName = Name;
-			test.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(SplitWrongAnswers())));
+			test.AddTestQuestion(new TestQuestion(Text, Answer,new List<string>(Invenory.SpliWithComma(WrongAnswers))));
 			Tests.Add(test);
 			MessageBox.Show($"Added test {test.TestName}!");
 		}
 
-		private string[] SplitWrongAnswers() => WrongAnswers.Split(',');
+		//protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "")
+		//{
+		//	PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		//}
 	}
 }

@@ -43,7 +43,7 @@ namespace WpfLab2.MVVM.ViewModels
 			challenge.NameOfEducationalInstitution = NameOfEducationalInstitution;
 			challenge.PassingScore = int.Parse(PassingScore);
 
-			challenge.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SplitWrongAnswers(WrongAnswers))));
+			challenge.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SpliWithComma(WrongAnswers))));
 
 			MessageBox.Show($"Added test {challenge.TestName}!");
 			Tests.Add(challenge);

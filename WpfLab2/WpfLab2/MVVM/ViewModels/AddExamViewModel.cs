@@ -45,7 +45,7 @@ namespace WpfLab2.MVVM.ViewModels
 			}
 			else
 			{
-				exam.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SplitWrongAnswers(WrongAnswers))));
+				exam.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SpliWithComma(WrongAnswers))));
 			}
 
 			MessageBox.Show($"Added test {exam.TestName}!");

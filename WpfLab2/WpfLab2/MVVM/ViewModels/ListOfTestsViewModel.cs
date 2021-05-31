@@ -49,6 +49,7 @@ namespace WpfLab2.MVVM.ViewModels
 		private void DeleteFile()
 		{
 			File.Delete(Invenory.DefaultPathToFile);
+			Invenory.Tests.Clear();
 			Tests.Clear();
 		}
 
