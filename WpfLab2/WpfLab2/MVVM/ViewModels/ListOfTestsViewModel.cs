@@ -21,9 +21,9 @@ namespace WpfLab2.MVVM.ViewModels
 		public string SearchElementName { get; set; }
 		public IList<Test> Tests { get; set; }
 
-		private RelayCommand _saveListCommnad = null;
+		private RelayCommand _saveListCommand = null;
 		public RelayCommand SaveListCmd
-			=> _saveListCommnad ?? (_saveListCommnad = new RelayCommand(SaveList, CanSaveList));
+			=> _saveListCommand ?? (_saveListCommand = new RelayCommand(SaveList, CanSaveList));
 
 		private RelayCommand _deleteFileCommand = null;
 		public RelayCommand DeleteFileCmd

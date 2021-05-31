@@ -19,7 +19,7 @@ namespace WpfLab2.MVVM.Models
 
         public static IList<Test> Tests { get; set; } 
 
-		public static string[] SpliWithComma(string str) => str.Split(',');
+		public static string[] SplitWithComma(string str) => str.Split(',');
 
         public static async Task<bool> SerializeElement<T>(string filename,
            T listOfElements)

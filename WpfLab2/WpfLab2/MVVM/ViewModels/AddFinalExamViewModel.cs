@@ -38,10 +38,12 @@ namespace WpfLab2.MVVM.ViewModels
 
 		private void AddTest()
 		{
-			FinalExam exam = new FinalExam();
-			exam.TestName = Name;
-			exam.TimeLimit = int.Parse(TimeLimit);
-			exam.ListOfExaminers = new List<string>(Invenory.SpliWithComma(Examiners));
+			FinalExam exam = new FinalExam
+			{
+				TestName = Name,
+				TimeLimit = int.Parse(TimeLimit),
+				ListOfExaminers = new List<string>(Invenory.SplitWithComma(Examiners))
+			};
 
 			if (string.IsNullOrEmpty(WrongAnswers))
 			{
@@ -49,7 +51,7 @@ namespace WpfLab2.MVVM.ViewModels
 			}
 			else
 			{
-				exam.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SpliWithComma(WrongAnswers))));
+				exam.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SplitWithComma(WrongAnswers))));
 			}
 
 			MessageBox.Show($"Added test {exam.TestName}!");

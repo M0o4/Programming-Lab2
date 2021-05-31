@@ -36,8 +36,7 @@ namespace WpfLab2.MVVM.ViewModels
 
 		private void AddTest()
 		{
-			Exam exam = new Exam();
-			exam.TestName = Name;
+			Exam exam = new Exam {TestName = Name};
 
 			if (string.IsNullOrEmpty(WrongAnswers))
 			{
@@ -45,7 +44,7 @@ namespace WpfLab2.MVVM.ViewModels
 			}
 			else
 			{
-				exam.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SpliWithComma(WrongAnswers))));
+				exam.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SplitWithComma(WrongAnswers))));
 			}
 
 			MessageBox.Show($"Added test {exam.TestName}!");

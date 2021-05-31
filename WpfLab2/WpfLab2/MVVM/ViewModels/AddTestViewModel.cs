@@ -39,9 +39,8 @@ namespace WpfLab2.MVVM.ViewModels
 
 		private void AddTest()
 		{
-			Test test = new Test();
-			test.TestName = Name;
-			test.AddTestQuestion(new TestQuestion(Text, Answer,new List<string>(Invenory.SpliWithComma(WrongAnswers))));
+			Test test = new Test {TestName = Name};
+			test.AddTestQuestion(new TestQuestion(Text, Answer,new List<string>(Invenory.SplitWithComma(WrongAnswers))));
 			Tests.Add(test);
 			MessageBox.Show($"Added test {test.TestName}!");
 		}

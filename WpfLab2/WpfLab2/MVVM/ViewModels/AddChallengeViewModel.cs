@@ -38,12 +38,14 @@ namespace WpfLab2.MVVM.ViewModels
 
 		private void AddTest()
 		{
-			Challenge challenge = new Challenge();
-			challenge.TestName = Name;
-			challenge.NameOfEducationalInstitution = NameOfEducationalInstitution;
-			challenge.PassingScore = int.Parse(PassingScore);
+			Challenge challenge = new Challenge
+			{
+				TestName = Name,
+				NameOfEducationalInstitution = NameOfEducationalInstitution,
+				PassingScore = int.Parse(PassingScore)
+			};
 
-			challenge.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SpliWithComma(WrongAnswers))));
+			challenge.AddTestQuestion(new TestQuestion(Text, Answer, new List<string>(Invenory.SplitWithComma(WrongAnswers))));
 
 			MessageBox.Show($"Added test {challenge.TestName}!");
 			Tests.Add(challenge);
